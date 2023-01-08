@@ -175,9 +175,9 @@ router.get("/add", async(req, res) => {
     });
   });
 
-  router.put("/dogs/modify/:user", (req, res) => {
+  router.put("/alldogs/modify/:dog", (req, res) => {
     Dog.updateOne(
-      {dogId: req.params._id},
+      {dog: req.params._id},
       {$set:{
         nom: req.body.nom,
         surnoms: req.body.surnoms,
