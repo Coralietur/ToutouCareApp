@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useFonts } from "expo-font";
 import { Calendar } from "react-native-calendars";
 import {
   Modal,
@@ -19,7 +18,7 @@ import SelectDropdown from "react-native-select-dropdown";
 import { FontAwesome } from "@expo/vector-icons";
 const moment = require("moment");
 
-const BACKEND_ADDRESS = 'http://192.168.10.182';
+const BACKEND_ADDRESS = 'http://192.168.1.32';
 
 export default function BookingScreen() {
   const hours = [
@@ -90,10 +89,7 @@ export default function BookingScreen() {
   const array = [];
   const [arrayOfDate, setArrayOfDate] = useState([]);
   const arrayB = [];
-  const [fontsLoaded] = useFonts({
-    SemiBold: require("../assets/styles/SemiBold.ttf"),
-    Bold: require("../assets/styles/Montserrat-Bold.ttf"),
-  });
+
 
 
   const hoursA = [
@@ -931,46 +927,6 @@ useEffect(() => {
             style={styles.iconPlus}
           />
         </TouchableOpacity>
-        {/* <Popover
-          style={styles.popover}
-          from={
-            <TouchableOpacity>
-              <Image
-                style={styles.profilPicture}
-                source={require("../assets/oussama1.jpg")}
-              ></Image>
-            </TouchableOpacity>
-          }
-        >
-
-          <TouchableOpacity
-            style={styles.buttonPopover}
-            onPress={() => {
-              navigation.navigate("Profil");
-            }}
-          >
-           
-            <Text style={styles.textPopover}>Modifer</Text>
-            <FontAwesome
-              name="user"
-              size={44}
-              color="black"
-              style={styles.iconPopover}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-          style={styles.buttonPopover}
-          >
-            <FontAwesome
-
-              name="sign-out"
-              size={44}
-              color="black"
-              style={styles.iconPopover}
-            />
-            <Text style={styles.textPopover}>Déconnexion</Text>
-          </TouchableOpacity>
-        </Popover> */}
 
         <Text
           onPress={() => {
@@ -1050,7 +1006,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginTop: 10,
-    fontFamily: "SemiBold",
     marginBottom: 20,
   },
   profilPicture: {
@@ -1153,7 +1108,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   textButtonNonDispo: {
-    fontFamily: "SemiBold",
     color: "#fff",
     fontWeight: "bold",
 
@@ -1166,7 +1120,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
     color: "#F12054",
     fontWeight: "bold",
-    fontFamily: "SemiBold",
     fontSize: 16,
   },
 
@@ -1312,7 +1265,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   intervalWeek: {
-    fontFamily: "SemiBold",
     color: "rgb(124, 124, 124)",
     fontWeight: "700",
     fontSize: 16,
@@ -1445,7 +1397,6 @@ const styles = StyleSheet.create({
   weekTitle: {
     fontSize: 22,
     fontWeight: "bold",
-    fontFamily: "Bold",
   },
 
   lottie: {
@@ -1537,7 +1488,6 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontFamily: "Bold",
     textTransform: "capitalize",
     textAlign: "center",
     fontSize: 16,

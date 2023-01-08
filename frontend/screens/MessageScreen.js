@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   headerText: {
-    fontFamily:"Bold",
     fontSize: 20,
     fontWeight: '500',
     marginLeft: 10,
@@ -159,7 +158,6 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   textBouton: {
-    fontFamily:"SemiBold",
     fontSize: 18,
   },
   navigation: {

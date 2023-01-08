@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons/faPenToSquare';
 
 
-const BACKEND_ADDRESS = 'http://192.168.10.140';
+const BACKEND_ADDRESS = 'http://192.168.1.32';
 
 export default function UserProfile() {
 

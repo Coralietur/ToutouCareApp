@@ -19,15 +19,14 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 
 
-const BACKEND_ADDRESS = 'http://192.168.10.140';
+const BACKEND_ADDRESS = 'http://192.168.1.32';
 
 export default function DogProfile() {
 
   const dispatch = useDispatch();
   const [editView, setEditView] = useState(false)
   const [dogInfosBackup, setDogInfosBackup] = useState();
-  const [editColor, setEditColor] = useState('white')
-  const [checked, setChecked] = useState(false);
+  const [editColor, setEditColor] = useState('white');
   
   const user = useSelector((state) => state.user.value);
   
@@ -214,8 +213,8 @@ useEffect(() => {
                 <Text style={styles.text}>Stérilisé(e):</Text>
                 <View style={styles.containerCheckbox}>
                   <BouncyCheckbox
-                    value={dogInfos.Sterilisation}
-                    onPress={(setChecked) => setDogInfos({...dogInfos, sterilisation : setChecked})} 
+                    isChecked={dogInfos.sterilisation}
+                    onPress={() => setDogInfos({...dogInfos, sterilisation : !dogInfos.sterilisation})} 
                     fillColor={"#008486"} 
                     unfillColor={"white"}
                     size={30}
@@ -284,8 +283,8 @@ useEffect(() => {
                 <Text style={styles.text}>Entente avec les chats:</Text>
                 <View style={styles.containerCheckbox}>
                   <BouncyCheckbox
-                   value={dogInfos.entente_chats}
-                   onPress={(setChecked) => setDogInfos({...dogInfos, entente_chats: setChecked})} 
+                   isChecked={dogInfos.entente_chats}
+                   onPress={() => setDogInfos({...dogInfos, entente_chats: !dogInfos.entente_chats})} 
                     fillColor={"#008486"} 
                     unfillColor={"white"}
                     size={30}
@@ -303,8 +302,8 @@ useEffect(() => {
                 <Text style={styles.text}>Entente avec les enfants:</Text>
                 <View style={styles.containerCheckbox}>
                   <BouncyCheckbox
-                    value={dogInfos.entente_enfants}
-                    onPress={(setChecked) => setDogInfos({...dogInfos, entente_enfants: setChecked})} 
+                    isChecked={dogInfos.entente_enfants}
+                    onPress={() => setDogInfos({...dogInfos, entente_enfants: !dogInfos.entente_enfants})} 
                     fillColor={"#008486"} 
                     unfillColor={"white"}
                     size={30}

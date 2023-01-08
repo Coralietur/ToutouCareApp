@@ -12,14 +12,14 @@ import {
   Image,  
 } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { useState  , useEffect} from "react";
+import { useState, useEffect} from "react";
 import { useDispatch } from "react-redux";
 import { collectData } from "../reducers/user";
-import { useFonts } from "expo-font";
 
 
 
-const BACKEND_ADDRESS = "http://192.168.10.182";
+
+const BACKEND_ADDRESS = "http://192.168.1.32";
 
 export default function LoginScreen({ navigation }) {
 
@@ -35,10 +35,7 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState("");
   const [codeCreche, setCode_creche] = useState("");
   const [checked, setChecked] = useState(false);
-  const [fontsLoaded] = useFonts({
-    SemiBold: require("../assets/styles/SemiBold.ttf"),
-    Bold: require("../assets/styles/Montserrat-Bold.ttf"),
-  });
+  
 
   const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
 
@@ -119,7 +116,7 @@ export default function LoginScreen({ navigation }) {
       </View>
 
       <View style={styles.containerCheckbox}>
-        <BouncyCheckbox value={checked}
+        <BouncyCheckbox
           onPress={(isChecked) => {setChecked}} 
           fillColor={"#008486"} 
           unfillColor={"white"}
@@ -159,7 +156,6 @@ const styles = StyleSheet.create({
   title : {
     fontSize: 30,
     paddingHorizontal : 5,
-    fontFamily:"SemiBold",
     color : "#365B58",
 
   },
@@ -195,7 +191,6 @@ const styles = StyleSheet.create({
   },
 
   textVerifMail: {
-    fontFamily:"Bold",
     textAlign: "center",
     color: "#F12054",
     fontSize: 17,
@@ -206,11 +201,6 @@ const styles = StyleSheet.create({
     marginVertical: 12,
     padding: 12,
     fontSize: 18,
-    //width: "80%",
-    //marginTop: 25,
-    //borderBottomColor: "#ec6e5b",
-    //borderBottomWidth: 1,
-    //fontSize: 18,
     backgroundColor: "white",
     width: 300,
     height: 50,
@@ -267,13 +257,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   field: {
-    fontFamily: "SemiBold",
     width: "80%",
     fontSize: 15,
     fontWeight: "600",
   },
   textSC: {
-    fontFamily:"Bold",
     fontSize: 17,
     fontWeight: "700",
   },

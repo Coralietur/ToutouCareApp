@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 
-const BACKEND_ADDRESS = "http://192.168.10.182";
+const BACKEND_ADDRESS = "http://192.168.1.32";
 
 export default function ProfilScreen({ navigation }) {
   const dispatch = useDispatch();
@@ -157,7 +157,6 @@ const styles = StyleSheet.create({
     textAlign: "left",
     lineHeight: 32,
     marginLeft: 22,
-    fontFamily: "Bold",
     fontSize: 19,
     width: "100%",
   },
@@ -203,7 +202,6 @@ const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "space-between",
     flexDirection: "row",
-    flexShrink: "",
     marginBottom:20,
   }, profilPicture: {
     width: 80,
@@ -238,11 +236,9 @@ const styles = StyleSheet.create({
     maxWidth: 200,
   },
   profilNameText: {
-    fontFamily:"Bold",
     fontSize: 21,
     fontWeight: "bold",
     right: "10%",
-    fontFamily: "Montserrat_600",
     paddingHorizontal: 5,
     color: "#365B58",
   },

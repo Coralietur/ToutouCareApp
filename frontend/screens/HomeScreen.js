@@ -21,7 +21,7 @@ import { faPenToSquare, faPowerOff } from "@fortawesome/free-solid-svg-icons/";
 import { faCircleXmark, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesome } from "@expo/vector-icons";
 
-const BACKEND_ADDRESS = "http://192.168.10.182";
+const BACKEND_ADDRESS = "http://192.168.1.32";
 
 export default function HomeScreen({ navigation }) {
   const userToken = useSelector((state) => state.user.value.data.token);
@@ -309,7 +309,6 @@ const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "space-between",
     flexDirection: "row",
-    flexShrink: "",
   },
   viewModalM: {
     width: "90%",
@@ -326,7 +325,6 @@ const styles = StyleSheet.create({
   textData: {
     width: "100%",
     fontSize: 17,
-    fontFamily: "SemiBold",
   },
   viewContainer: {
     width: "90%",
@@ -356,7 +354,6 @@ const styles = StyleSheet.create({
     textAlign: "left",
     lineHeight: 32,
     marginLeft: 22,
-    fontFamily: "Bold",
     fontSize: 19,
     width: "100%",
   },
@@ -369,14 +366,12 @@ const styles = StyleSheet.create({
   profilNameText: {
     fontSize: 21,
     fontWeight: "bold",
-    // fontFamily: "Montserrat_600",
     paddingHorizontal: 5,
     color: "#365B58",
   },
   titleStyle: {
     fontSize: 18,
     fontWeight: "bold",
-    // fontFamily: "Montserrat_600",
     padding: 5,
     color: "#365B58",
     alignSelf: "center",
@@ -477,7 +472,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   contentText: {
-    // fontFamily: "Montserrat_600",
     fontSize: 15,
     fontStyle: "italic",
     paddingHorizontal: 5,

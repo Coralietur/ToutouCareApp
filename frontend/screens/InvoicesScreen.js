@@ -22,7 +22,7 @@ import {
 
 import { useEffect } from "react";
 import { FontAwesome } from "@expo/vector-icons";
-const BACKEND_ADDRESS = 'http://192.168.10.182';
+const BACKEND_ADDRESS = 'http://192.168.1.32';
 
 export default function InvoicesScreen() {
   const source = {
@@ -47,7 +47,7 @@ export default function InvoicesScreen() {
   const [factureData, setFactureData] = useState([]);
 
   const [factureDataDate, setFactureDataDate] = useState([]);
-  const [dataBool, setDataBool] = useState("false");
+  const [dataBool, setDataBool] = useState(false);
 
   const data = [
     { key: "1", value: "Janvier 2022" },
@@ -66,7 +66,7 @@ export default function InvoicesScreen() {
 
   console.log("userToken", dateTo);
 
-  const findInovices = () => {
+  const findInvoices = () => {
     fetch(`${BACKEND_ADDRESS}:3000/invoices/${dateFrom}/${dateTo}/${userToken}`, {
       method: "GET",
       headers: {
@@ -83,7 +83,7 @@ export default function InvoicesScreen() {
           setFactureDataDate(data);
           setDataBool(true);
         } else {
-          Alert.alert("Aucune facture disponible pour cette période");
+          alert("Aucune facture disponible pour cette période");
         }
       });
   };
@@ -186,7 +186,7 @@ export default function InvoicesScreen() {
             <Text style={styles.text}>Facture du {dateSplit}</Text>
             <TouchableOpacity
               onPress={() => {
-                Alert.alert("Téléchargement de votre facture");
+                alert("Téléchargement de votre facture");
                 generatePdf();
               }}
             >
@@ -201,7 +201,7 @@ export default function InvoicesScreen() {
     } else {
       return (
         <View style={styles.listFactures}>
-          <Text style={styles.textNoDispo}>Aucunes factures disponibles</Text>
+          <Text style={styles.textNoDispo}>Aucune facture disponible</Text>
         </View>
       );
     }
@@ -281,7 +281,7 @@ export default function InvoicesScreen() {
 
             <TouchableOpacity onPress={()=>{
               
-              Alert.alert("Téléchargement de votre facture")
+              alert("Téléchargement de votre facture")
               generatePdf()}}>
               <Image
                 style={styles.iconePdf}
@@ -307,7 +307,7 @@ export default function InvoicesScreen() {
         animationType="slide"
         transparent={false}
         visible={modalVisible}
-        style={styles.modal}
+        style={styles.Modal}
       >
         <SafeAreaView>
           <Text style={styles.titleModal}>Toutes vos factures</Text>
@@ -387,7 +387,7 @@ export default function InvoicesScreen() {
             <TouchableOpacity
               style={styles.buttonSearch}
               onPress={() => {
-                findInovices();
+                findInvoices();
               }}>
               <Text style={styles.buttonText}>Rechercher</Text>
               <FontAwesome
@@ -419,16 +419,13 @@ const styles = StyleSheet.create({
 
   titleModal: {
     fontSize: 30,
-    fontFamily: "Bold",
     textAlign: "center",
     marginTop: 20,
     marginBottom: 20,
   },
   subtitleModal: {
     padding: 5,
-
     fontSize: 17,
-    fontFamily: "SemiBold",
     textAlign: "center",
     marginBottom: 20,
   },
@@ -485,7 +482,6 @@ const styles = StyleSheet.create({
   textNoDispo: {
     width: "100%",
     textAlign: "center",
-    fontFamily: "SemiBold",
     fontSize: 17,
     textAlign: "center",
     color: "#C4C4C4",
@@ -503,7 +499,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     textAlign: "center",
     fontSize: 17,
-    fontFamily: "SemiBold",
   },
   to: {
     marginTop: 20,
@@ -513,7 +508,6 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontFamily: "SemiBold",
     fontSize: 17,
   },
   mainContainer: {
@@ -524,7 +518,6 @@ const styles = StyleSheet.create({
   titleMain: {
     fontSize: 19,
     marginTop: 40,
-    fontFamily: "SemiBold",
     fontWeight: "700",
   },
 
@@ -553,7 +546,6 @@ const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "space-between",
     flexDirection: "row",
-    flexShrink: "",
   },
   container: {
     backgroundColor: "white",
@@ -574,7 +566,6 @@ const styles = StyleSheet.create({
   },
 
   titleHead: {
-    fontFamily: "Bold",
     fontSize: 27,
   },
 
@@ -593,12 +584,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   input: {
-    //width: "80%",
-    //height: 40,
-    //marginTop: 25,
-    //borderBottomColor: "#ec6e5b",
-    //borderBottomWidth: 1,
-    //fontSize: 18,
     backgroundColor: "white",
     width: "50%",
     borderRadius: 6,
@@ -629,13 +614,11 @@ const styles = StyleSheet.create({
   },
 
   titleHistorique: {
-    fontFamily: "SemiBold",
     color: "rgba(0,0,0,0.4)",
   },
 
   subTitleMain: {
     marginBottom: 22,
-    fontFamily: "SemiBold",
     marginTop: 12,
     fontSize: 20,
     color: "rgba(0,0,0,0.4)",
@@ -687,7 +670,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   buttonText: {
-    fontFamily: "SemiBold",
     fontSize: 19,
     textAlign: "center",
     color: "white",

@@ -9,7 +9,6 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo-google-fonts/montserrat": "^0.2.2",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
@@ -22,7 +21,6 @@
     "@react-navigation/native-stack": "6",
     "@reduxjs/toolkit": "^1.9.1",
     "expo": "~47.0.8",
-    "expo-font": "~11.0.1",
     "expo-image-picker": "^14.0.2",
     "expo-print": "~12.0.0",
     "expo-sharing": "~11.0.1",
